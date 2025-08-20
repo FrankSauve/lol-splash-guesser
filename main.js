@@ -98,7 +98,7 @@ form.addEventListener('submit', async function(event) {
     } else {
         const result = document.createElement("p");
         result.className = "text-white"
-        result.innerText = `❌ ${input.value.toLowerCase()}`;
+        result.innerText = `❌ ${input.value} --> ${answer}`;
         resultsDiv.appendChild(result);
         input.value = "";
 
