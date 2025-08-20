@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<title>LoL Skin Guesser</title>
+</head>
+
+<body class="bg-stone-900">
+    <div id="body" class="flex flex-col h-screen items-center m-12">
+        <h1 class="text-3xl text-white mb-4" style="font-family: Jura;">Guess the LoL Champion from the Splash</h1>
+        <img id="splash" src="" alt="">
+
+        <div class="inline-block">
+            <form id="answer-form">
+                <input id="answer" type="text" placeholder="Champion Name..."
+                    class="w-100 mt-4 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 text-white">
+                <div id="autocomplete-list"
+                    class="max-w-100 absolute mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto hidden">
+                </div>
+            </form>
+            <p id="streak" class="text-white text-xl m-4 my-5"></p>
+        </div>
+
+
+        <div id="results"></div>
+        <p id="result" class="text-white"></p>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
