@@ -61,7 +61,7 @@ async function getSkinsForChampion(championName) {
 }
 
 async function getSplash(championName, skinNum) {
-    let url = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_${skinNum}.jpg`
+    let url = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_${skinNum}.jpg`
 
      try {
         const response = await fetch(url);
