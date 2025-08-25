@@ -3,8 +3,6 @@ let answer = "";
 let championNames;
 let streak = 0;
 
-console.log(form)
-
 window.onload = async () => {
     const input = document.getElementById("answer");
     input.value = "";
@@ -122,9 +120,9 @@ function renderList(filtered) {
         div.textContent = item;
         div.className = "px-4 py-2 cursor-pointer hover:bg-blue-100";
         div.addEventListener("click", () => {
-        input.value = item;
-        listContainer.innerHTML = "";
-        listContainer.classList.add("hidden");
+            input.value = item;
+            listContainer.innerHTML = "";
+            listContainer.classList.add("hidden");
         });
         listContainer.appendChild(div);
     });
@@ -163,7 +161,9 @@ input.addEventListener("keydown", function(e) {
 
 function setActive(items) {
     if (!items) return;
+
     items.forEach(item => item.classList.remove("bg-blue-500", "text-white"));
+
     if (currentFocus >= 0 && currentFocus < items.length) {
         items[currentFocus].classList.add("bg-blue-500", "text-white");
         items[currentFocus].scrollIntoView({ block: "nearest" });
@@ -171,8 +171,8 @@ function setActive(items) {
 }
 
 document.addEventListener("click", function(e) {
-if (e.target !== input) {
-    listContainer.innerHTML = "";
-    listContainer.classList.add("hidden");
-}
+    if (e.target !== input) {
+        listContainer.innerHTML = "";
+        listContainer.classList.add("hidden");
+    }
 });
