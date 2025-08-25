@@ -61,20 +61,7 @@ async function getSkinsForChampion(championName) {
 }
 
 async function getSplash(championName, skinNum) {
-    let url = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_${skinNum}.jpg`
-
-     try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-            throw new Error(`Riot API error: ${response.status}`);
-        }
-    
-        return response.url;
-    } catch (error) {
-        console.error(error.message);
-        alert(error.message);
-  }
+    return `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_${skinNum}.jpg`
 }
 
 form.addEventListener('submit', async function(event) {
