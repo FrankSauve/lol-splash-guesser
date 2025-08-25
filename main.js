@@ -15,7 +15,6 @@ async function getRandomSplash() {
     championNames = await getAllChampionNames();
     const selectedName = championNames[Math.floor(Math.random() * championNames.length)];
     answer = selectedName;
-    console.log(answer)
     const skinNums = await getSkinsForChampion(selectedName);
     const selectedSkinNum = skinNums[Math.floor(Math.random() * skinNums.length)];
 
@@ -91,16 +90,20 @@ form.addEventListener('submit', async function(event) {
         input.disabled = true;
         input.hidden = true;
 
-        const reloadBtn = document.createElement("button");
-        reloadBtn.className = "m-4 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-        reloadBtn.innerText = "Retry";
-        reloadBtn.onclick = () => {window.location.reload()}
-        resultsDiv.appendChild(reloadBtn);
+        createRetryButton();
 
         document.getElementById("submitBtn").disabled = true;
         document.getElementById("submitBtn").hidden = true;
     }
 })
+
+function createRetryButton() {
+    const retryBtn = document.createElement("button");
+    retryBtn.className = "m-4 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+    retryBtn.innerText = "Retry";
+    retryBtn.onclick = () => {window.location.reload()}
+    resultsDiv.appendChild(retryBtn);
+}
 
 const input = document.getElementById("answer");
 const listContainer = document.getElementById("autocomplete-list");
