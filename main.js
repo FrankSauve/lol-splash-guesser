@@ -88,7 +88,7 @@ form.addEventListener('submit', async function(event) {
         input.disabled = true;
         input.hidden = true;
 
-        createRetryButton();
+        resultsDiv.appendChild(createRetryButton());
 
         document.getElementById("submitBtn").disabled = true;
         document.getElementById("submitBtn").hidden = true;
@@ -100,7 +100,7 @@ function createRetryButton() {
     retryBtn.className = "m-4 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
     retryBtn.innerText = "Retry";
     retryBtn.onclick = () => {window.location.reload()}
-    resultsDiv.appendChild(retryBtn);
+    return retryBtn;
 }
 
 const input = document.getElementById("answer");
